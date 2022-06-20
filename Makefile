@@ -11,6 +11,7 @@ all: kernel8.img
 install: all
 	udisksctl mount -b /dev/mmcblk0p1
 	cp kernel8.img /run/media/daniil/*/
+	cp /run/media/daniil/*/blobcode.bin /run/media/daniil/*/bootcode.bin
 	umount /run/media/daniil/*
 	sync
 

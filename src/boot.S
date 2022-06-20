@@ -16,5 +16,5 @@ _start:
 	mov	sp, #LOW_MEMORY // Initialize the kernel stack pointer to +4mb, growing downwards
 	bl	kernel_main     // kernel_main()
 	
-halt: 
+halt:
 	b halt

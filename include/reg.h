@@ -20,3 +20,8 @@
 #define UART_BASE (0x7E201000-BUS_OFFSET)
 
 #define ST_CLO (0x7e003004 - BUS_OFFSET)
+
+#define ARM_BASE  (0x7E00B000 - BUS_OFFSET)
+
+// Basic configuration
+#define ARM_ID  (ARM_BASE+0x44c)
