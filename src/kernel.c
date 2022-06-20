@@ -4,10 +4,10 @@
 
 void kernel_main(void)
 {
-    uart_init();
-    uart_send_string("Hello, world!\r\n");
+    uart0_init();
+    uart0_send_string("Hello, world!\r\n");
 
     while (1) {
-        uart_send(uart_recv());
+        uart0_send(uart0_recv());
     }
 }
