@@ -27,7 +27,7 @@
 #define CM_UARTCTL_FRAC_SET                                0x00000200
 #define CM_UARTCTL_ENAB_SET                                0x00000010
 
-void uart0_init(void)
+void uart_init(void)
 {
     unsigned int selector;
     
@@ -56,20 +56,20 @@ void uart0_init(void)
 	put32(UART_CR, 0x301);
 }
 
-void uart0_send(char c)
+void uart_send(char c)
 {
     while(get32(UART_FR) & (1<<5));
     put32(UART_DR, c);
 }
-char uart0_recv()
+char uart_recv()
 {
     while(get32(UART_FR) & (1<<4));
     return put32(UART_DR) & 0xFF;
 }
 
-void uart0_send_string(const char *str)
+void uart_send_string(const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++) {
-        uart0_send(str[i]);
+        uart_send(str[i]);
     }
 }
