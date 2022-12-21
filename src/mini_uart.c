@@ -58,12 +58,12 @@ void uart_init(void)
 
 void uart_send(char c)
 {
-    while(get32(UART_FR) & (1<<5));
+    while (get32(UART_FR) & (1<<5));
     put32(UART_DR, c);
 }
 char uart_recv()
 {
-    while(get32(UART_FR) & (1<<4));
+    while (get32(UART_FR) & (1<<4));
     return put32(UART_DR) & 0xFF;
 }
 

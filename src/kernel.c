@@ -36,7 +36,8 @@ void kernel_main(void)
 	delay(1000);
     uart_send_string("Hello, world!\r\n");
 
-    /*while (1) {
+    while (1) {
+        // Echo back chars, the way a normal console would.  
         uart_send(uart_recv());
-    }*/
+    }
 }
